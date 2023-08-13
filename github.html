@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github button</title>
+</head>
+
+<body>
+    <h1 id="secret-text">This is a git hub button model</h1>
+    <input type="text" name="" id="input" placeholder="place enter delete">
+    <button id="btn-delete" disabled>Delete</button>
+    <script>
+        document.getElementById('input').addEventListener('keyup', function(event){
+                const text = event.target.value;
+                const attributes= document.getElementById('btn-delete')
+
+                if(text == 'delete'){
+                    attributes.removeAttribute('disabled')
+                   
+                }
+                else
+                attributes.setAttribute('disabled',true)
+            })
+
+        document.getElementById('btn-delete').addEventListener('click', function (){
+            
+            const secretText = document.getElementById('secret-text')
+            secretText.style.display='none'
+            })
+    </script>
+</body>
+
+</html>

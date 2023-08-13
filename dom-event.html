@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM event handler and listener</title>
+</head>
+
+<body>
+    <h1 id="event-handler">This is a header</h1>
+    <p id="display-input">Default text</p>
+    <input type="text" id="input-text" aria-label="none">
+    <button class="" id="input-btn">submit</button>
+    <button onclick="OnClick()">Change header text by event handler</button>
+    <button id="event-listener">Change by event listener</button>
+    <script>
+        function OnClick() {
+            const handlerStatus = document.getElementById('event-handler');
+            handlerStatus.innerText = 'Text is changed by event handler'
+        }
+        document.getElementById('event-listener').addEventListener('click', function () {
+            const eventLister = document.getElementById('event-handler');
+            eventLister.innerText = 'Changed by event listener';
+        })
+        document.getElementById('input-btn').addEventListener('click', function(){
+            const inputText = document.getElementById('input-text')
+            const inputField = inputText.value
+            const p = document.getElementById('display-input');
+            p.innerText=inputField;
+            inputText.value='';
+            
+        })
+    </script>
+</body>
+
+</html>

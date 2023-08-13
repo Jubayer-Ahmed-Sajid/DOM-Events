@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making a interactive comment box</title>
+</head>
+
+<body>
+    <h1>These are the comments</h1>
+    <div id="comment-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ratione provident placeat quibusdam iure sequi
+            quam, molestiae illo distinctio maiores consequatur in est ullam atque modi. Quos debitis delectus corrupti
+            ut
+            quae amet repudiandae quasi. Tempore assumenda autem tenetur minima consectetur labore, esse commodi
+            temporibus!
+            Quidem nihil blanditiis rem sunt.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias qui sed ratione voluptas, quasi modi
+            explicabo expedita veritatis assumenda velit quaerat enim eaque totam tenetur quidem! Libero cupiditate,
+            odio id
+            a porro ut quae sequi magnam, labore impedit nam quaerat? Ut officia sequi impedit ipsam vitae at. Numquam,
+            voluptates repellat.</p>
+    </div>
+    <textarea name="none" id="input-text" cols="60" rows="5"></textarea>
+    <button id="post-btn">Post</button>
+    <script>
+        // 1.add event listener to the post button
+        document.getElementById('post-btn').addEventListener('click', function () {
+        //2.get the comment inside the text area 
+            const inputText = document.getElementById('input-text');
+            const updatedText = inputText.value;
+
+    
+        //3.set the comment inside the comment container
+            // 1.get the comment container;
+            // 2.create a new element
+            // 3.set the text of the comment as inner text of p tag
+            // 4.add the p tag using append child
+            const commentContainer= document.getElementById('comment-container');
+            const p = document.createElement('p');
+            p.innerText=updatedText;
+            commentContainer.appendChild(p);
+            inputText.value='';
+        })
+    </script>
+
+</body>
+
+</html>

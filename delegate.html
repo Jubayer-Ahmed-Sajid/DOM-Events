@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate items</title>
+</head>
+<body>
+    <h1>This is a un order list</h1>
+    <ul id="list-container">
+        <li class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Lorem, ipsum dolor.</li>
+    </ul>
+    <button id="btn-add">Add item</button>
+    <script>
+        document.getElementById('list-container').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target)
+        })
+        document.getElementById('btn-add').addEventListener('click',function(){
+          const newItem =  document.getElementById('list-container')
+          const li = document.createElement('li');
+          li.innerText=generateRandomSentence();
+          newItem.appendChild(li);
+          li.classList.add('item')
+        })
+    </script>
+    <script src="dom.js"></script>
+</body>
+</html>
